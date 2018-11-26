@@ -1,10 +1,13 @@
 # Prime-Generator
 Python script with functions for primality testing, prime generation, and Mersenne prime generation.
 
-The current program implements a trial division algorithm for primality testing.
+The current program implements a trial division algorithm for primality testing, and a Lucas-Lehmer algorithm for generating Mersenne primes.
 
-In future updates, I plan to implement:
-- Lucas-Lehmer primality testing (similar to Prime95)
-- Support for generation of different classes of primes
-- A factorisation algorithm to list the integer divisors of nonprimes
-- General improvements to computational complexity
+On a Microsoft Surface Book, this script generates the first 10,000 prime numbers in 4.78 seconds. The first 16 Mersenne primes are generated in under 30 seconds. 
+
+Future updates may focus on:
+- Speed improvements
+- Support for other types of primes
+
+Known issues include:
+- 2 is not recognised as a prime number by the primality testing function and is hardwired into the generation algorithm
