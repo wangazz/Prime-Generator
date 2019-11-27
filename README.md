@@ -1,5 +1,7 @@
 # Prime-Generator
-Python script with functions for primality testing, prime generation, and Mersenne prime generation.
+C# console app with functions for primality testing, prime generation, and Mersenne prime generation.
+
+This was originally a Python script, but has been migrated to C# for performance improvements.
 
 The current program implements a trial division algorithm for primality testing, and a Lucas-Lehmer algorithm for generating Mersenne primes.
 
