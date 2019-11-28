@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 
 namespace Prime_Generator_CSharp
 {
@@ -44,7 +45,7 @@ namespace Prime_Generator_CSharp
                 GeneratePrimes(n);
                 return 0;
             } 
-            else if (mode == 3) {// Generate Mersenne Primes
+            else if (mode == 3) { // Generate Mersenne Primes
                 Console.WriteLine("n? ");
                 int n = Convert.ToInt32(Console.ReadLine());
                 GenerateMersennePrimes(n);
@@ -72,11 +73,11 @@ namespace Prime_Generator_CSharp
         }
 
         private static bool LucasLehmerTest(int p) {
-            double s = 4;
-            double m = Math.Pow(2,p) - 1;
+            BigInteger s = 4;
+            BigInteger m = BigInteger.Pow(2, p) - 1;
 
-            for (int x = 0; x < p-2; x++) {
-                s = (Math.Pow(s,2) - 2) % m;
+            for (int x = 0; x < p - 2; x++) {
+                s = (BigInteger.Pow(s, 2) - 2) % m;
             }
             if (s == 0) {
                 return true;
@@ -111,10 +112,11 @@ namespace Prime_Generator_CSharp
             Console.WriteLine(3);
             int primesGenerated = 1;
             int p = 3;
-
-            while (primesGenerated < primesToGenerate) {
+            while (primesGenerated < primesToGenerate)
+            {
                 if (LucasLehmerTest(p) == true) {
-                    Console.WriteLine(Math.Pow(2,p) - 1);
+                    BigInteger candidatePrime = BigInteger.Pow(2, p) - 1;
+                    Console.WriteLine(candidatePrime);
                     primesGenerated++;
                     p++;
                 }
